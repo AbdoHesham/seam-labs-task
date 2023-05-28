@@ -1,0 +1,121 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+      <mat-accordion multi>
+        <mat-expansion-panel expanded style="background-color: #f7f7fa">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Category </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul>
+            <li *ngFor="let item of Categories">
+              <mat-checkbox
+                color="primary"
+                (change)="sendNotificationForSpecificUsers($event, item);getAllProducts(selectedUsers,selectedPrices)"
+              >
+                <!-- [checked]="item" -->
+                {{ item }}
+              </mat-checkbox>
+            </li>
+          </ul>
+        </mat-expansion-panel>
+        <mat-expansion-panel expanded style="background-color: #f7f7fa">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Expanded Filters </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <ul>
+            <li *ngFor="let item of pricesFilters">
+              <mat-checkbox
+                color="primary"
+                (change)="filterprices($event, item.id) ; getAllProducts(selectedUsers,selectedPrices )"
+              >
+                <!-- [checked]="item" -->
+                {{ item.name }}
+              </mat-checkbox>
+            </li>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="col-md-9">
+      <div class="row mt-3">
+        <div
+          class="col-lg-3 col-md-6 my-2"
+          style="display: flex; justify-content: center"
+          *ngFor="let item of products"
+        >
+          <div class="custom-card ">
+            <div
+              style="
+                padding-bottom: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <img class="item" [src]="item?.image" alt="" />
+            </div>
+            <p class="title">
+              {{ item?.title }}
+            </p>
+            <b class="price">
+              {{ item?.price | currency }}
+            </b>
+            <p class="description">
+              {{ item?.description }}
+            </p>
+
+            <div
+              class="d-flex"
+              style="justify-content: space-between; align-items: center"
+            >
+              <!-- <bar-rating [theme]="'fontawesome-o'" [rate]="item['rating']['rate']" [max]="5" [readOnly]='true'>
+              </bar-rating> -->
+              <div class="rating">
+                <img
+                  src="assets/img/star.png"
+                  width="16px"
+                  height="16px"
+                  alt=""
+                />
+                <img
+                  src="assets/img/star.png"
+                  width="16px"
+                  height="16px"
+                  alt=""
+                />
+                <img
+                  src="assets/img/star.png"
+                  width="16px"
+                  height="16px"
+                  alt=""
+                />
+                <img
+                  src="assets/img/star.png"
+                  width="16px"
+                  height="16px"
+                  alt=""
+                />
+                <img
+                  src="assets/img/star.png"
+                  width="16px"
+                  height="16px"
+                  alt=""
+                />
+              </div>
+              <button style="height: 32px">
+                <img
+                  src="assets/img/heart.png"
+                  width="20px"
+                  height="20px"
+                  alt=""
+                />
+                Watch
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

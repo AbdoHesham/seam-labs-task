@@ -1,0 +1,221 @@
+@import "./colors.scss";
+@import "https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap";
+body {
+  background-color: #ffffff !important;
+
+  padding: 0;
+  margin: 0;
+}
+// buttons
+
+.btn-blue-outline {
+  box-sizing: border-box;
+  border: 1px solid $light-blue;
+  border-radius: 4px;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  align-items: flex-end;
+  text-align: center;
+  letter-spacing: 0.0075em;
+  background: #ffffff;
+  color: $main-color;
+  padding: 6px 12px;
+}
+.btn-blue-raised {
+  align-items: flex-start;
+  padding: 6px 12px;
+  background: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  align-items: flex-end;
+  text-align: center;
+  letter-spacing: 0.0075em;
+  box-shadow: 0px 2px 4px rgba(27, 78, 163, 0.2),
+    0px 4px 8px rgba(41, 121, 255, 0.2);
+  border: 0;
+  border-radius: 4px;
+  color: $main-color;
+}
+.btn-login {
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: $white;
+  background: $rose;
+  border-radius: 65px;
+  height: 54px;
+  width: 100%;
+}
+.text-rose {
+  color: $rose;
+}
+.custom-label {
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #7a7a7a;
+}
+input.inp {
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 42px;
+  height: 48px;
+  width: 668px;
+  background: #ededf0;
+  padding-inline: 20px;
+  outline-color: aliceblue;
+}
+.custom-card {
+  /* White 100% */
+
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(59, 69, 123, 0.2),
+    0px 4px 8px rgba(92, 107, 192, 0.2);
+  border-radius: 8px;
+  width: 258px;
+  // 258px
+  height: 472px;
+  padding: 16px;
+  img.item {
+    width: 226px;
+    height: 224px;
+    border-radius: 4px;
+  }
+  .title {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.0275em;
+    color: #19191d;
+    height: 74px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .price {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: bolder;
+  }
+  .description {
+    /* Inter / Body Small */
+
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    /* or 20px */
+    letter-spacing: 0.018em;
+
+    /* Gray / 50 */
+
+    color: #787885;
+    height: 41px;
+    font-weight: bolder;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  button {
+    /* White 100% */
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #9dc2ff;
+    border-radius: 4px;
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    /* or 20px */
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.018em;
+
+    /* Blue / 70 */
+
+    color: #2264d1;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .custom-card {
+    /* White 100% */
+
+    background: #ffffff;
+    box-shadow: 0px 2px 15px rgba(59, 69, 123, 0.2),
+      0px 4px 8px rgba(92, 107, 192, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    // 258px
+    height: 100%;
+    padding: 16px;
+    img.item {
+      width: 226px;
+      height: 224px;
+      border-radius: 4px;
+    }
+    .title {
+      font-family: "Quicksand", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.0275em;
+      color: #19191d;
+      height: 74px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    .price {
+      font-family: "Quicksand", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.87);
+      font-weight: bolder;
+    }
+    .description {
+      /* Inter / Body Small */
+
+      font-family: "Quicksand", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      /* or 20px */
+      letter-spacing: 0.018em;
+
+      /* Gray / 50 */
+
+      color: #787885;
+      height: 41px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+  }
+}
+.text-blue {
+  color: $main-color;
+}

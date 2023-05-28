@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/themw/main.scss";
+// @import '/node_modules/ngx-bar-rating/themes/br-stars-theme.scss';
+// @import '/node_modules/ngx-bar-rating/themes/br-default-theme';
+// @import '/node_modules/ngx-bar-rating/themes/br-fontawesome-theme';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

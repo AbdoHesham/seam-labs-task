@@ -1,0 +1,18 @@
+
+
+  .toolbar-container {
+    height: 64px;
+    overflow: hidden;
+  }
+  .mat-toolbar {
+    height: 64px;
+    transition: height 0.3s;
+  }
+  @media screen and (max-width: 599px) {
+    .toolbar-container.mat-expanded {
+      height: auto;
+    }
+    .mat-toolbar.mat-expanded {
+      height: auto;
+    }
+  }
