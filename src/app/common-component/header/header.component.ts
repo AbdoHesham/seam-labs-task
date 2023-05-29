@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { CategoriesService } from 'src/@seam-labs/Services/Brand/category.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,13 +11,30 @@ import { RouterLink } from '@angular/router';
   // imports: [NgbCollapseModule, RouterLink],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  cartCount: any;
+  constructor(
+    private CategoriesService: CategoriesService,
+    private router: Router
+  ) {
+    this.CategoriesService.searchWord.subscribe();
+  }
   expanded = false;
   isMenuCollapsed = true;
+  keyWord = '';
 
+  setKeyWord() {
+    this.CategoriesService.searchWord.next(this.keyWord);
+  }
   toggleExpanded() {
     this.expanded = !this.expanded;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.CategoriesService.cartCount.subscribe((cartCount: number) => {
+      this.cartCount = cartCount;
+    });
+  }
+  signIn() {
+    this.router.navigateByUrl('/auth/login')
+  }
 }

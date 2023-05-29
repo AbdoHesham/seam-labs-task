@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="bg-img">
+        <img [src]="item?.image" style="" alt="" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <div class="custom-card" style="">
+          <h2 class="title">
+            {{ item?.title }}
+          </h2>
+          <div class="d-flex">
+            <div class="category">{{ item?.category }} |</div>
+            <div class="rating">
+              <img
+                src="assets/img/star.png"
+                width="16px"
+                height="16px"
+                alt=""
+              />
+              <img
+                src="assets/img/star.png"
+                width="16px"
+                height="16px"
+                alt=""
+              />
+              <img
+                src="assets/img/star.png"
+                width="16px"
+                height="16px"
+                alt=""
+              />
+              <img
+                src="assets/img/star.png"
+                width="16px"
+                height="16px"
+                alt=""
+              />
+              <img
+                src="assets/img/star.png"
+                width="16px"
+                height="16px"
+                alt=""
+              />
+
+              <span>
+                {{ item?.rating.rate }} ({{ item?.rating.count }} reviews)</span
+              >
+            </div>
+          </div>
+          <b class="price">
+            {{ item?.price | currency }}
+          </b>
+          <p class="desc-title">Description:</p>
+          <p class="description">
+            {{ item?.description }}
+          </p>
+
+          <div
+            class="d-flex"
+            style="justify-content: space-between; align-items: center"
+          >
+            <!-- <bar-rating [theme]="'fontawesome-o'" [rate]="item['rating']['rate']" [max]="5" [readOnly]='true'>
+                        </bar-rating> -->
+
+            <!-- <button style="height: 32px">
+                  <img src="assets/img/heart.png" width="20px" height="20px" alt="" />
+                  Watch
+                </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container  " >
+    <div class="p-absolute  " >
+      <div class="col-md-7 d-flex ">
+        <img [src]="item?.image" style="" alt="" />
+
+        <div class="d-grid">
+          <p class="desc-title">
+            {{ item?.title }}
+          </p>
+          <div class="category">{{ item?.category }}</div>
+        </div>
+      </div>
+      <div class="col-md-5 d-flex">
+        <div class="d-flex" style="align-items: center">
+            <p class="qty">Qty:</p>
+            <p class="action-btn" (click)="decrementQuantity()">-</p>
+            <input type="number" class="qyt-inp" [(ngModel)]="quantity" />
+            <p class="action-btn" (click)="incrementQuantity()">+</p>
+          </div>
+
+        <button class="add-to-cart-btn" (click)="addToCart(item)">ADD TO CARD</button>
+      </div>
+    </div>
+
+  </div>
+</div>

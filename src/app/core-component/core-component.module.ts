@@ -20,12 +20,17 @@ import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../common-component/shared.module';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     CoreComponentComponent,
     LayoutComponent,
     HeaderComponent,
     HomeComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +55,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BarRatingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
+    MatSnackBarModule
   ],
   exports: [CoreComponentComponent, HeaderComponent, LayoutComponent],
   providers: [],

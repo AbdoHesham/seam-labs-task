@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EmptyStateComponent } from './empty-state/empty-state.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    EmptyStateComponent
+  ],
   imports: [
     CommonModule,
-  ]
+  ],
+  exports:[EmptyStateComponent]
 })
 export class SharedModule { }

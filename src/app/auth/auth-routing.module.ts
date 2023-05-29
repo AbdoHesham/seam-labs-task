@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'signin', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: '',
     component: AuthComponent,
@@ -13,23 +13,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./signin/signin.module').then((m) => m.SigninModule),
       },
-      {
-        path: 'change-password',
-        loadChildren: () =>
-          import('./change-password/change-password.module').then((m) => m.ChangePasswordModule),
-      },
-      {
-        path: 'signup',
-        loadChildren: () =>
-          import('./signup/signup.module').then((m) => m.SignupModule),
-      },
-      {
-        path: 'forgetpassword',
-        loadChildren: () =>
-          import('./forgetpassword/forgetpassword.module').then(
-            (m) => m.ForgetpasswordModule
-          ),
-      },
+
     ],
   },
 ];

@@ -16,15 +16,21 @@ export class SpinnerInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    this.token = localStorage.getItem('Access-token');
+    this.token = localStorage.getItem('AccessToken');
 
-    request.clone({
-      setHeaders: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        Authorization: `${this.token}`,
-      },
-    });
+    // request.clone({
+    //   setHeaders: {
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Origin': '*',
+    //     Authorization: `${this.token}`,
+    //   },
+    // });
+    if (this.token) {
+      // If we have a token, we set it to the header
+      request = request.clone({
+         setHeaders: {Authorization: `Authorization token ${this.token}`}
+      });
+   }    
     this.spinner.show();
     return next.handle(request).pipe(
       finalize(() => {

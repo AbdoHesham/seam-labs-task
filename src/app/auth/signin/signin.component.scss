@@ -1,0 +1,24 @@
+.bg-brand {
+  height: 100vh;
+  width: 100%;
+}
+
+.p-form {
+  padding-inline: 154px;
+}
+
+@media only screen and (max-width: 992px) {
+  .p-form {
+    padding-inline: 50px !important;
+  }
+}
+.logo-img {
+    display: flex;
+    justify-content: center;
+  img {
+    width: 209px;
+    height: 58px;
+    margin-top: 234px;
+    margin-bottom: 82px;
+  }
+}
