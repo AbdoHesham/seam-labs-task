@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
       'AccessToken',
       JSON.stringify(body.username)
     );
-    this._snackBar.open('you are logged in successfully ');
+    this._snackBar.open('you are logged in successfully ' ,'x');
 
     this.router.navigateByUrl('/')
 

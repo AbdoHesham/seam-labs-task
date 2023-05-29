@@ -54,11 +54,11 @@ export class ProductDetailsComponent implements OnInit {
     );
     if (existingItem) {
       // If the item already exists, update its quantity and price
-      this._snackBar.open('already exist');
+      this._snackBar.open('already exist','x');
     } else {
       // If the item doesn't exist, add it to the cart
       this.CategoriesService.cartItems.push(item);
-      this._snackBar.open('added susseccfully');
+      this._snackBar.open('added susseccfully','x');
     }
     console.log(
       this.CategoriesService.cartItems,
